@@ -2,11 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Mongo } from 'meteor/mongo';
-import { Review } from './db.js';
+// import { Review } from './db.js';
 
 import './main.html';
 import './detail/detail.js';
-import './review/review';
+import './review/review.js';
+import './card/card.js';
 
 FlowRouter.notFound = {
   action() {

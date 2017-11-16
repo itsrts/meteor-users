@@ -1,0 +1,24 @@
+<template name="detail">
+    <div  class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{> card getdetails}}
+            <form class="form col-md-6 left">
+                Write a Review..!! You are always welcome
+                <input class="form" type="text" name="text" placeholder="Type Something..!!" />
+                <button type="submit">Post Review</button>
+            </form>
+            </div>
+        </div>
+        <div class="row form">
+            <h2>All Reviews</h2>
+        </div>
+        <div class="row">
+            {{#each reviews}}
+            <div class="col-md-3">
+                {{> review}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</template>

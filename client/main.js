@@ -32,7 +32,7 @@ FlowRouter.route('/', {
     if(Meteor.user()!=null) {
       FlowRouter.go('users', {});
     } else {
-      // BlazeLayout.render('App_body', {main: 'home'});
+      BlazeLayout.render('App_body', {main: 'home'});
     }
   }
 });

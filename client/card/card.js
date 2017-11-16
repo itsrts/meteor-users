@@ -20,6 +20,24 @@ Template.card.helpers({
       return JSON.stringify(this);
     },
     reviews: function() {
+      // $(".star").rateYo({
+      //   maxValue: 1,
+      //   rating: 1,
+      //   numStars: 1,
+      //   starWidth: "40px",
+      //   readOnly: true
+      // });
       return Review.find({to: Template.instance().data._id}).count();
+    },
+    avg: function() {
+      var r = Review.find({to: Template.instance().data._id});
+      r = r.collection._docs._map;
+      var s = 0, c = 0;
+      for(var i in r) {
+        c++;
+        s+=r[i].rating || 0;
+        console.log(i, s);
+      }
+      return (s / parseFloat(c)).toFixed(1);
     }
 });

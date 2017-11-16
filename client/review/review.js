@@ -8,5 +8,8 @@ import './review.html';
 Template.review.helpers({
   gettime: function() {
     return new Date(this.createdAt).toDateString();
+  },
+  rating: function() {
+    return this.rating || 0;
   }
 });

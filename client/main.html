@@ -11,25 +11,26 @@
 
 <body class="center container">
   <div>
-    {{> home}}
+      <h1>Welcome to Meteor Users.!!</h1>
+      {{#if loginrequired}}
+        Please Login
+      {{else}}
+        Hello
+      {{/if}}
+      <br />
+      {{> loginButtons}}
+      <br />
+    <!-- {{> home}} -->
     {{> App_body}}
   </div>
 </body>
 
 <template name="home">
-    <h1>Welcome to Meteor Users.!!</h1>
-    {{#if loginrequired}}
-      Please Login
-    {{else}}
-      Hello
-    {{/if}}
-    <br />
-    {{> loginButtons}}
-    <br />
     {{#if loginrequired}}
       <img src="https://i2.wp.com/www.yourtechnocrat.com/wp-content/uploads/2017/05/gif-wallpaper-for-android.gif?resize=400%2C300&amp;ssl=1" alt="Image result for animated gif" width="500" height="500" style="margin-top: 50px;">
     {{else}}
-      <!-- {{> users}} -->
+      <!-- <a href="/users">All Users</a> -->
+      {{> users}}
     {{/if}}
 </template>
 

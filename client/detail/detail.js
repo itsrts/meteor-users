@@ -36,12 +36,14 @@ Template.detail.events({
 
         const target = event.target;
         const text = target.text.value;
+        let rating = target.rating.value;
+        rating = parseInt(rating);
 
         if(text=="") {
             alert("Please enter a review..!!");
             return;
         }
-        let doc = {"review":text, "from": Meteor.userId(), "to":FlowRouter.getParam("id"), createdAt: new Date().getTime()};
+        let doc = {"review":text, "rating": rating, "from": Meteor.userId(), "to":FlowRouter.getParam("id"), createdAt: new Date().getTime()};
         Review.insert(doc, function(p) {
             console.log("inserted", p);
         });
